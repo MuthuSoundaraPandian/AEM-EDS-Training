@@ -1,6 +1,6 @@
 name: On Publish event
 
-on: 
+on:
   repository_dispatch:
     types:
       - resource-published
@@ -11,3 +11,14 @@ jobs:
     - run: |
         echo "Status: ${{ github.event.client_payload.status }}"
         echo "Path: ${{ github.event.client_payload.path }}"
+  notify-connector:
+    if: (github.event.client_payload.status == 200 || github.event.client_payload.status == 204) && endsWith(github.event.client_payload.path, '.md')
+    runs-on: ubuntu-latest
+    steps:
+    - name: Notify upsert endpoint
+      run: |
+        sleep 1s
+        PAGE_PATH=$(echo "${{ github.event.client_payload.path }}" | sed 's/\.md$//g')
+        curl -s -H "Content-Type:application/json" -d '{"path":"${{PAGE_PATH}}"}' -X POST "https://jsonplaceholder.typicode.com/posts")
+        echo "response: $response"
+        echo "PAGE_PATH: $PAGE_PATH"
