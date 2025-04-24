@@ -1,4 +1,5 @@
 module.exports = {
+  "linebreak-style": ["error", "auto"],
   root: true,
   extends: 'airbnb-base',
   env: {
