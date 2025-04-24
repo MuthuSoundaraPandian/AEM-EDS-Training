@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Adobe. All rights reserved.
+ * Copyright 2024 Adobe. All rights reserved.
  * This file is licensed to you under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License. You may obtain a copy
  * of the License at http://www.apache.org/licenses/LICENSE-2.0
@@ -13,63 +13,50 @@
 /* eslint-env browser */
 function sampleRUM(checkpoint, data) {
   // eslint-disable-next-line max-len
-  const timeShift = () => (window.performance ? window.performance.now() : Date.now() - window.hlx.rum.firstReadTime);
+  const timeShift = () => (window.performance
+    ? window.performance.now()
+    : Date.now() - window.hlx.rum.firstReadTime);
   try {
     window.hlx = window.hlx || {};
+    sampleRUM.enhance = () => {};
     if (!window.hlx.rum) {
-      sampleRUM.enhance = () => {};
-      const param = new URLSearchParams(window.location.search).get('rum');
-      const weight = (param === 'on' && 1)
-        || (window.SAMPLE_PAGEVIEWS_AT_RATE === 'high' && 10)
-        || (window.SAMPLE_PAGEVIEWS_AT_RATE === 'low' && 1000)
-        || 100;
+      const weight = new URLSearchParams(window.location.search).get('rum') === 'on'
+        ? 1
+        : 100;
       const id = Math.random().toString(36).slice(-4);
-      const isSelected = param !== 'off' && Math.random() * weight < 1;
+      const isSelected = Math.random() * weight < 1;
       // eslint-disable-next-line object-curly-newline, max-len
       window.hlx.rum = {
         weight,
         id,
         isSelected,
-        firstReadTime: window.performance ? window.performance.timeOrigin : Date.now(),
+        firstReadTime: window.performance
+          ? window.performance.timeOrigin
+          : Date.now(),
         sampleRUM,
         queue: [],
         collector: (...args) => window.hlx.rum.queue.push(args),
       };
       if (isSelected) {
-        const dataFromErrorObj = (error) => {
-          const errData = { source: 'undefined error' };
-          try {
-            errData.target = error.toString();
-            errData.source = error.stack
-              .split('\n')
-              .filter((line) => line.match(/https?:\/\//))
-              .shift()
-              .replace(/at ([^ ]+) \((.+)\)/, '$1@$2')
-              .replace(/ at /, '@')
-              .trim();
-          } catch (err) {
-            /* error structure was not as expected */
-          }
-          return errData;
-        };
-
-        window.addEventListener('error', ({ error }) => {
-          const errData = dataFromErrorObj(error);
-          sampleRUM('error', errData);
+        ['error', 'unhandledrejection'].forEach((event) => {
+          window.addEventListener(event, ({ reason, error }) => {
+            const errData = { source: 'undefined error' };
+            try {
+              errData.target = (reason || error).toString();
+              errData.source = (reason || error).stack
+                .split('\n')
+                .filter((line) => line.match(/https?:\/\//))
+                .shift()
+                .replace(/at ([^ ]+) \((.+)\)/, '$1@$2')
+                .trim();
+            } catch (err) {
+              /* error structure was not as expected */
+            }
+            sampleRUM('error', errData);
+          });
         });
-
-        window.addEventListener('unhandledrejection', ({ reason }) => {
-          let errData = {
-            source: 'Unhandled Rejection',
-            target: reason || 'Unknown',
-          };
-          if (reason instanceof Error) {
-            errData = dataFromErrorObj(reason);
-          }
-          sampleRUM('error', errData);
-        });
-
-        sampleRUM.baseURL = sampleRUM.baseURL || new URL(window.RUM_BASE || '/', new URL('https://rum.hlx.page'));
+        sampleRUM.baseURL = sampleRUM.baseURL
+          || new URL(window.RUM_BASE || '/', new URL('https://rum.hlx.page'));
         sampleRUM.collectBaseURL = sampleRUM.collectBaseURL || sampleRUM.baseURL;
         sampleRUM.sendPing = (ck, time, pingData = {}) => {
           // eslint-disable-next-line max-len, object-curly-newline
@@ -81,11 +68,8 @@ function sampleRUM(checkpoint, data) {
             t: time,
             ...pingData,
           });
-          const urlParams = window.RUM_PARAMS
-            ? `?${new URLSearchParams(window.RUM_PARAMS).toString()}`
-            : '';
           const { href: url, origin } = new URL(
-            `.rum/${weight}${urlParams}`,
+            `.rum/${weight}`,
             sampleRUM.collectBaseURL,
           );
           const body = origin === window.location.origin
@@ -98,16 +82,9 @@ function sampleRUM(checkpoint, data) {
         sampleRUM.sendPing('top', timeShift());
 
         sampleRUM.enhance = () => {
-          // only enhance once
-          if (document.querySelector('script[src*="rum-enhancer"]')) return;
-          const { enhancerVersion, enhancerHash } = sampleRUM.enhancerContext || {};
           const script = document.createElement('script');
-          if (enhancerHash) {
-            script.integrity = enhancerHash;
-            script.setAttribute('crossorigin', 'anonymous');
-          }
           script.src = new URL(
-            `.rum/@adobe/helix-rum-enhancer@${enhancerVersion || '^2'}/src/index.js`,
+            '.rum/@adobe/helix-rum-enhancer@^2/src/index.js',
             sampleRUM.baseURL,
           ).href;
           document.head.appendChild(script);
@@ -120,9 +97,11 @@ function sampleRUM(checkpoint, data) {
     if (window.hlx.rum && window.hlx.rum.isSelected && checkpoint) {
       window.hlx.rum.collector(checkpoint, data, timeShift());
     }
-    document.dispatchEvent(new CustomEvent('rum', { detail: { checkpoint, data } }));
+    document.dispatchEvent(
+      new CustomEvent('rum', { detail: { checkpoint, data } }),
+    );
   } catch (error) {
-    // something went awry
+    // something went wrong
   }
 }
 
@@ -139,7 +118,9 @@ function setup() {
   const scriptEl = document.querySelector('script[src$="/scripts/scripts.js"]');
   if (scriptEl) {
     try {
-      [window.hlx.codeBasePath] = new URL(scriptEl.src).pathname.split('/scripts/scripts.js');
+      [window.hlx.codeBasePath] = new URL(scriptEl.src).pathname.split(
+        '/scripts/scripts.js',
+      );
     } catch (error) {
       // eslint-disable-next-line no-console
       console.log(error);
@@ -148,12 +129,11 @@ function setup() {
 }
 
 /**
- * Auto initialization.
+ * Auto initializiation.
  */
 
 function init() {
   setup();
-  sampleRUM.collectBaseURL = window.origin;
   sampleRUM();
 }
 
@@ -295,7 +275,10 @@ function createOptimizedPicture(
   src,
   alt = '',
   eager = false,
-  breakpoints = [{ media: '(min-width: 600px)', width: '2000' }, { width: '750' }],
+  breakpoints = [
+    { media: '(min-width: 600px)', width: '2000' },
+    { width: '750' },
+  ],
 ) {
   const url = new URL(src, window.location.href);
   const picture = document.createElement('picture');
@@ -307,7 +290,10 @@ function createOptimizedPicture(
     const source = document.createElement('source');
     if (br.media) source.setAttribute('media', br.media);
     source.setAttribute('type', 'image/webp');
-    source.setAttribute('srcset', `${pathname}?width=${br.width}&format=webply&optimize=medium`);
+    source.setAttribute(
+      'srcset',
+      `${pathname}?width=${br.width}&format=webply&optimize=medium`,
+    );
     picture.appendChild(source);
   });
 
@@ -316,14 +302,20 @@ function createOptimizedPicture(
     if (i < breakpoints.length - 1) {
       const source = document.createElement('source');
       if (br.media) source.setAttribute('media', br.media);
-      source.setAttribute('srcset', `${pathname}?width=${br.width}&format=${ext}&optimize=medium`);
+      source.setAttribute(
+        'srcset',
+        `${pathname}?width=${br.width}&format=${ext}&optimize=medium`,
+      );
       picture.appendChild(source);
     } else {
       const img = document.createElement('img');
       img.setAttribute('loading', eager ? 'eager' : 'lazy');
       img.setAttribute('alt', alt);
       picture.appendChild(img);
-      img.setAttribute('src', `${pathname}?width=${br.width}&format=${ext}&optimize=medium`);
+      img.setAttribute(
+        'src',
+        `${pathname}?width=${br.width}&format=${ext}&optimize=medium`,
+      );
     }
   });
 
@@ -374,7 +366,9 @@ function wrapTextNodes(block) {
   block.querySelectorAll(':scope > div > div').forEach((blockColumn) => {
     if (blockColumn.hasChildNodes()) {
       const hasWrapper = !!blockColumn.firstElementChild
-        && validWrappers.some((tagName) => blockColumn.firstElementChild.tagName === tagName);
+        && validWrappers.some(
+          (tagName) => blockColumn.firstElementChild.tagName === tagName,
+        );
       if (!hasWrapper) {
         wrap(blockColumn);
       } else if (
@@ -398,15 +392,17 @@ function decorateButtons(element) {
       const up = a.parentElement;
       const twoup = a.parentElement.parentElement;
       if (!a.querySelector('img')) {
-        if (up.childNodes.length === 1 && (up.tagName === 'P' || up.tagName === 'DIV')) {
-          a.className = 'button'; // default
+        if (
+          up.childNodes.length === 1
+          && (up.tagName === 'P' || up.tagName === 'DIV')
+        ) {
           up.classList.add('button-container');
         }
         if (
           up.childNodes.length === 1
           && up.tagName === 'STRONG'
           && twoup.childNodes.length === 1
-          && twoup.tagName === 'P'
+          && (twoup.tagName === 'P' || twoup.tagName === 'DIV')
         ) {
           a.className = 'button primary';
           twoup.classList.add('button-container');
@@ -415,7 +411,7 @@ function decorateButtons(element) {
           up.childNodes.length === 1
           && up.tagName === 'EM'
           && twoup.childNodes.length === 1
-          && twoup.tagName === 'P'
+          && (twoup.tagName === 'P' || twoup.tagName === 'DIV')
         ) {
           a.className = 'button secondary';
           twoup.classList.add('button-container');
@@ -431,6 +427,7 @@ function decorateButtons(element) {
  * @param {string} [prefix] prefix to be added to icon src
  * @param {string} [alt] alt text to be added to icon
  */
+// here i have to work
 function decorateIcon(span, prefix = '', alt = '') {
   const iconName = Array.from(span.classList)
     .find((c) => c.startsWith('icon-'))
@@ -440,8 +437,6 @@ function decorateIcon(span, prefix = '', alt = '') {
   img.src = `${window.hlx.codeBasePath}${prefix}/icons/${iconName}.svg`;
   img.alt = alt;
   img.loading = 'lazy';
-  img.width = 16;
-  img.height = 16;
   span.append(img);
 }
 
@@ -450,10 +445,34 @@ function decorateIcon(span, prefix = '', alt = '') {
  * @param {Element} [element] Element containing icons
  * @param {string} [prefix] prefix to be added to icon the src
  */
+function decorateFontIcon(span) {
+  const iconName = Array.from(span.classList)
+    .find((c) => c.startsWith('icon-'))
+    .substring(5);
+  let style = 'regular'; // Default style is 'fa-regular'
+  let icon = '';
+  if (iconName.includes('--')) {
+    [style, icon] = iconName.split('--');
+  } else {
+    icon = iconName;
+  }
+  const iconTag = document.createElement('i');
+  iconTag.classList.add(`fa-${style}`);
+  iconTag.classList.add(`fa-${icon}`);
+  // console.log(prefix, iconName, icon, style, 'hello');
+  iconTag.dataset.iconName = iconName;
+  span.append(iconTag);
+}
+
 function decorateIcons(element, prefix = '') {
-  const icons = element.querySelectorAll('span.icon');
+  const isFontIcon = true;
+  const icons = [...element.querySelectorAll('span.icon')];
   icons.forEach((span) => {
-    decorateIcon(span, prefix);
+    if (isFontIcon) {
+      decorateFontIcon(span);
+    } else {
+      decorateIcon(span, prefix);
+    }
   });
 }
 
@@ -500,6 +519,43 @@ function decorateSections(main) {
 }
 
 /**
+ * Gets placeholders object.
+ * @param {string} [prefix] Location of placeholders
+ * @returns {object} Window placeholders object
+ */
+// eslint-disable-next-line import/prefer-default-export
+async function fetchPlaceholders(prefix = 'default') {
+  window.placeholders = window.placeholders || {};
+  if (!window.placeholders[prefix]) {
+    window.placeholders[prefix] = new Promise((resolve) => {
+      fetch(`${prefix === 'default' ? '' : prefix}/placeholders.json`)
+        .then((resp) => {
+          if (resp.ok) {
+            return resp.json();
+          }
+          return {};
+        })
+        .then((json) => {
+          const placeholders = {};
+          json.data
+            .filter((placeholder) => placeholder.Key)
+            .forEach((placeholder) => {
+              placeholders[toCamelCase(placeholder.Key)] = placeholder.Text;
+            });
+          window.placeholders[prefix] = placeholders;
+          resolve(window.placeholders[prefix]);
+        })
+        .catch(() => {
+          // error loading placeholders
+          window.placeholders[prefix] = {};
+          resolve(window.placeholders[prefix]);
+        });
+    });
+  }
+  return window.placeholders[`${prefix}`];
+}
+
+/**
  * Builds a block DOM Element from a two dimensional array, string, or object
  * @param {string} blockName name of the block
  * @param {*} content two dimensional array or string or object of content
@@ -540,7 +596,9 @@ async function loadBlock(block) {
     block.dataset.blockStatus = 'loading';
     const { blockName } = block.dataset;
     try {
-      const cssLoaded = loadCSS(`${window.hlx.codeBasePath}/blocks/${blockName}/${blockName}.css`);
+      const cssLoaded = loadCSS(
+        `${window.hlx.codeBasePath}/blocks/${blockName}/${blockName}.css`,
+      );
       const decorationComplete = new Promise((resolve) => {
         (async () => {
           try {
@@ -599,7 +657,7 @@ function decorateBlocks(main) {
  * @returns {Promise}
  */
 async function loadHeader(header) {
-  const headerBlock = buildBlock('header', '');
+  const headerBlock = buildBlock('megamenu', '');
   header.append(headerBlock);
   decorateBlock(headerBlock);
   return loadBlock(headerBlock);
@@ -664,10 +722,47 @@ async function loadSections(element) {
   for (let i = 0; i < sections.length; i += 1) {
     // eslint-disable-next-line no-await-in-loop
     await loadSection(sections[i]);
-    if (i === 0 && sampleRUM.enhance) {
-      sampleRUM.enhance();
-    }
   }
+}
+
+function formatDate(timestamp) {
+  const date = new Date(timestamp * 1000);
+  const month = String(date.getMonth() + 1).padStart(2, '0');
+  const day = String(date.getDate()).padStart(2, '0');
+  const year = date.getFullYear();
+  return `${month}/${day}/${year}`;
+}
+
+function loadPublishedDate() {
+  const currPagePath = window.location.pathname;
+  const sitemapjsonUrl = '/sitemap.json';
+  fetch(sitemapjsonUrl)
+    .then((response) => {
+      if (!response.ok) {
+        throw new Error('Network response was not ok');
+      }
+      return response.json();
+    })
+    .then((data) => {
+      const found = data.data.find((item) => item.path === currPagePath);
+      let lastModifiedDate = null;
+      let lastPublisheddate = null;
+      if (found) {
+        // eslint-disable-next-line no-undef
+        if (found.lastModified) {
+          lastModifiedDate = formatDate(found.lastModified);
+        }
+        if (found.lastPublished) {
+          lastPublisheddate = formatDate(new Date(found.lastPublished).getTime() / 1000);
+        }
+      }
+      window.BlogLastModified = lastModifiedDate;
+      window.BlogLastPublished = lastPublisheddate;
+    })
+    .catch((error) => {
+      // eslint-disable-next-line no-console
+      console.error('There was a problem with the fetch operation:', error);
+    });
 }
 
 init();
@@ -681,6 +776,7 @@ export {
   decorateIcons,
   decorateSections,
   decorateTemplateAndTheme,
+  fetchPlaceholders,
   getMetadata,
   loadBlock,
   loadCSS,
@@ -696,4 +792,5 @@ export {
   toClassName,
   waitForFirstImage,
   wrapTextNodes,
+  loadPublishedDate,
 };
