@@ -19,6 +19,6 @@ jobs:
       run: |
         sleep 1s
         PAGE_PATH=$(echo "${{ github.event.client_payload.path }}" | sed 's/\.md$//g')
-        curl -s -H "Content-Type:application/json" -d '{"path":"${{PAGE_PATH}}"}' -X POST "https://jsonplaceholder.typicode.com/posts")
+        curl -s -X GET "https://jsonplaceholder.typicode.com/posts")
         echo "response: $response"
         echo "PAGE_PATH: $PAGE_PATH"
