@@ -1,4 +1,5 @@
 module.exports = {
+  'linebreak-style': ['error', 'auto'],
   root: true,
   extends: 'airbnb-base',
   env: {
@@ -11,7 +12,6 @@ module.exports = {
     requireConfigFile: false,
   },
   rules: {
-    'linebreak-style': ['error', 'auto'],
     'import/extensions': ['error', { js: 'always' }], // require js file extensions in imports
     'linebreak-style': ['error', 'unix'], // enforce unix linebreaks
     'no-param-reassign': [2, { props: false }], // allow modifying properties of param
