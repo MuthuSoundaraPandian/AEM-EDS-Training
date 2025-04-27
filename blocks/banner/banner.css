@@ -1,0 +1,17 @@
+.banner-container .banner-wrapper .banner {
+  display: flex;
+}
+.banner-container .banner-wrapper .banner div {
+  width: 50%;
+}
+.banner-container .banner-wrapper .banner div .title {
+  color: red;
+  font-size: 40px;
+}
+.banner-container .banner-wrapper .banner div .description {
+  color: green;
+  font-size: 20px;
+}
+.banner-container .banner-wrapper .banner div img {
+  width: 100%;
+}/*# sourceMappingURL=banner.css.map */
