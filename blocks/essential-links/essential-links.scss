@@ -1,0 +1,17 @@
+.essential-links {
+  .d-flex-wrapper {
+    display: flex;
+    height: 128px;
+    .imgbox {
+      height: 100px;
+    }
+    .grey-bg {
+      background: #eaeaea;
+      align-items: center;
+      justify-content: center;
+      padding: 15px;
+      display: flex;
+      font-size: 14px;
+    }
+  }
+}
