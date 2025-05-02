@@ -1,7 +1,7 @@
 export default function decorate(block) {
-  const flex_wrapper = block.children[0];
-  if (flex_wrapper) {
-    flex_wrapper.classList.add('d-flex-wrapper');
+  const flexWrapper = block.children[0];
+  if (flexWrapper) {
+    flexWrapper.classList.add('d-flex-wrapper');
   }
   const flexchild = document.querySelectorAll('.d-flex-wrapper > div');
   const newDiv = document.createElement('div');
@@ -11,8 +11,8 @@ export default function decorate(block) {
       div.classList.add('flex-item');
     });
   }
-  const flex_wrapper_sibling = block.children[1];
-  flex_wrapper_sibling.classList.add('flex-wrap-sibling');
+  const flexWrapperSibling = block.children[1];
+  flexWrapperSibling.classList.add('flex-wrap-sibling');
   newDiv.classList.add('content-wrapper');
   const flexItems = document.querySelectorAll('.d-flex-wrapper .flex-item');
   const flexWrapSibling = document.querySelector('.flex-wrap-sibling');
@@ -20,9 +20,6 @@ export default function decorate(block) {
   // Process content distribution
   flexWrapChildren.forEach((child, index) => {
     const flexItemIndex = Math.floor(index / 2);
-    //if (flexItems[flexItemIndex]) {
-    //flexItems[flexItemIndex].appendChild(child);
-    //}
     flexItems[flexItemIndex]
       ? flexItems[flexItemIndex].appendChild(child)
       : null;
