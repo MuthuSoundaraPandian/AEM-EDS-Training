@@ -1,0 +1,87 @@
+.teaser-container{
+    color: white;
+    padding: 70px;
+    background: navy;
+    .teaser{
+        display: flex;
+        gap:10px;
+        @media screen and (max-width:767px){
+            display: inherit;
+
+        }
+        .teaser-image{
+            width: 50%;
+            @media screen and (max-width:1200px){
+                width: 100%;
+                margin-right: 30px;
+            }
+            img{
+                width:300px;
+                height: 300px;
+            }
+        }
+        .teaser-content{
+            // @media screen and (max-width:767px){   
+            //     text-align: center;
+            // }
+            .teaser-heading{
+                margin-bottom: 15px;
+                p{
+                    font-size: 53px;
+                    line-height: 60px;
+                    margin: 0;
+                    margin-top: 20px;
+                    @media screen and (max-width:1200px){   
+                        font-size: 14px;
+                        margin-top: 10px;
+                    }
+                }
+               
+            }
+            .teaser-desc{
+                margin-bottom: 10px;
+                @media screen and (max-width:1200px){   
+                    margin-bottom: 10px;
+                }
+                p{
+                    font-size: 18px;
+                    margin: 0;
+                    @media screen and (max-width:1200px){   
+                        font-size: 16px;
+                    }
+                }
+               
+            }
+            .button-container{
+                @media screen and (max-width:1200px){   
+                    margin-top: 10px;
+                }
+                :hover{
+                    background-color: orange;
+                    border: 1px solid orange;
+                }
+                p{
+                    border: 1px solid #fff;
+                    padding: 15px;
+                    display: inline-block;
+                    background-color: #fff;
+                    @media screen and (max-width:1200px){   
+                        padding: 10px;
+                    }
+                   
+                    a{
+                        color: #000;
+                        letter-spacing: 1px;
+                        text-decoration: none;
+                        text-transform: uppercase;
+                        font-weight: bold;
+                        @media screen and (max-width:1200px){   
+                            font-size: 10px;
+                        }
+                    }
+                }
+            }
+        }
+       
+    }
+}
