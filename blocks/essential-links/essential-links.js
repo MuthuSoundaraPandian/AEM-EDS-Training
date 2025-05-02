@@ -1,21 +1,72 @@
 export default function decorate(block) {
-  const title = block.children[0];
-  if (title) {
-    title.classList.add('d-flex-wrapper');
+  const flex_wrapper = block.children[0];
+  if (flex_wrapper) {
+    flex_wrapper.classList.add('d-flex-wrapper');
   }
-  const flexitem = block.children[0].children[0];
-  const flexitem1 = block.children[0].children[1];
-  const flexitem2 = block.children[0].children[2];
-  const flexitem3 = block.children[0].children[3];
-  if (flexitem && flexitem1 && flexitem2 && flexitem3) {
-    flexitem.classList.add('flex-item');
-    flexitem1.classList.add('flex-item');
-    flexitem2.classList.add('flex-item');
-    flexitem3.classList.add('flex-item');
+  const flexchild = document.querySelectorAll('.d-flex-wrapper > div');
+  const newDiv = document.createElement('div');
+  newDiv.classList.add('flex-container');
+  if (flexchild.length > 0) {
+    flexchild.forEach((div) => {
+      div.classList.add('flex-item');
+    });
   }
-
-  const ul = document.querySelector('ul');
-  if (ul) {
-    ul.classList.add('main-ul');
+  const flex_wrapper_sibling = block.children[1];
+  flex_wrapper_sibling.classList.add('flex-wrap-sibling');
+  newDiv.classList.add('content-wrapper');
+  const flexItems = document.querySelectorAll('.d-flex-wrapper .flex-item');
+  const flexWrapSibling = document.querySelector('.flex-wrap-sibling');
+  const flexWrapChildren = Array.from(flexWrapSibling.children);
+  // Process content distribution
+  flexWrapChildren.forEach((child, index) => {
+    const flexItemIndex = Math.floor(index / 2);
+    //if (flexItems[flexItemIndex]) {
+    //flexItems[flexItemIndex].appendChild(child);
+    //}
+    flexItems[flexItemIndex]
+      ? flexItems[flexItemIndex].appendChild(child)
+      : null;
+  });
+  flexWrapSibling.remove();
+  // Process headings
+  const flexItemH2s = document.querySelectorAll('.flex-item h2');
+  if (flexItemH2s.length > 0) {
+    flexItemH2s.forEach((h2) => {
+      h2.classList.add('box-heading');
+    });
   }
+  // Process image blocks
+  const flexItem_img = document.querySelectorAll(
+    '.flex-item .box-heading + div'
+  );
+  if (flexItem_img.length > 0) {
+    flexItem_img.forEach((div) => {
+      div.classList.add('img-block');
+    });
+  }
+  // Process content blocks
+  const flexItem_div = document.querySelectorAll(
+    '.flex-item .box-heading + div + div'
+  );
+  if (flexItem_div.length > 0) {
+    flexItem_div.forEach((div) => {
+      div.classList.add('content-block');
+    });
+  }
+  // Now wrap img-block and content-block in flex-container for each flex-item
+  flexItems.forEach((flexItem) => {
+    // Find all direct children that need to be wrapped
+    const imgBlock = flexItem.querySelector('.img-block');
+    const contentBlock = flexItem.querySelector('.content-block');
+    if (imgBlock && contentBlock) {
+      // Create the flex-container
+      const flexContainer = document.createElement('div');
+      flexContainer.classList.add('flex-container');
+      // Insert the container before the first element to wrap
+      imgBlock.before(flexContainer);
+      // Move the elements into the container
+      flexContainer.appendChild(imgBlock);
+      flexContainer.appendChild(contentBlock);
+    }
+  });
 }
