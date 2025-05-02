@@ -1,10 +1,12 @@
 export default function decorate(block) {
   const essentialHeading = block.children[0];
-  essentialHeading ? essentialHeading.classList.add('essential-heading') : undefined;
+  if(essentialHeading){
+    essentialHeading.classList.add('essential-heading');
+  }
   const essentialImgContentContainer = block.children[1];
   if (essentialImgContentContainer) {
     essentialImgContentContainer.classList.add(
-      'essential_img_content_container'
+      'essential_img_content_container',
     );
   }
   const essentialImgSection = document.querySelectorAll(
