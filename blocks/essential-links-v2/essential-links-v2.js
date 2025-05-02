@@ -1,11 +1,9 @@
 export default function decorate(block) {
-  const essential_heading = block.children[0];
-  essential_heading
-    ? essential_heading.classList.add('essential-heading')
-    : null;
-  const essential_img_content_container = block.children[1];
-  essential_img_content_container
-    ? essential_img_content_container.classList.add(
+  const essentialHeading = block.children[0];
+  essentialHeading ? essentialHeading.classList.add('essential-heading') : null;
+  const essentialImgContentContainer = block.children[1];
+  essentialImgContentContainer
+    ? essentialImgContentContainer.classList.add(
         'essential_img_content_container'
       )
     : null;
