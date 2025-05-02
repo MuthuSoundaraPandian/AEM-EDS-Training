@@ -2,11 +2,11 @@ export default function decorate(block) {
   const essentialHeading = block.children[0];
   essentialHeading ? essentialHeading.classList.add('essential-heading') : null;
   const essentialImgContentContainer = block.children[1];
-  essentialImgContentContainer
-    ? essentialImgContentContainer.classList.add(
-        'essential_img_content_container'
-      )
-    : null;
+  if (essentialImgContentContainer) {
+    essentialImgContentContainer.classList.add(
+      'essential_img_content_container'
+    );
+  }
   const essential_img_section = document.querySelectorAll(
     '.essential_img_content_container > div:first-child'
   );
