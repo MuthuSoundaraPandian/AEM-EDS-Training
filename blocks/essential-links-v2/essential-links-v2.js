@@ -1,6 +1,6 @@
 export default function decorate(block) {
   const essentialHeading = block.children[0];
-  essentialHeading ? essentialHeading.classList.add('essential-heading') : null;
+  essentialHeading ? essentialHeading.classList.add('essential-heading') : undefined;
   const essentialImgContentContainer = block.children[1];
   if (essentialImgContentContainer) {
     essentialImgContentContainer.classList.add(
@@ -8,7 +8,7 @@ export default function decorate(block) {
     );
   }
   const essentialImgSection = document.querySelectorAll(
-    '.essential_img_content_container > div:first-child'
+    '.essential_img_content_container > div:first-child',
   );
   if (essentialImgSection.length >= 0) {
     essentialImgSection.forEach((div) => {
@@ -16,7 +16,7 @@ export default function decorate(block) {
     });
   }
   const essentialContentSection = document.querySelectorAll(
-    '.essential_img_content_container > div:last-child'
+    '.essential_img_content_container > div:last-child',
   );
   if (essentialContentSection.length >= 0) {
     essentialContentSection.forEach((div) => {
