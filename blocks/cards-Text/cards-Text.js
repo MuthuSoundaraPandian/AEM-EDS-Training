@@ -19,8 +19,7 @@ export default function decorate(block) {
     block1imageleft.classList.add('block1imageleft');
   }
   // Block 1 image - left image-text
-  const block1imagelefttext =
-    block.children[1].children[0].children[0].children[1];
+  const block1imagelefttext = block.children[1].children[0].children[0].children[1];
   if (block1imagelefttext) {
     block1imagelefttext.classList.add('block1imagelefttext');
   }
@@ -30,8 +29,7 @@ export default function decorate(block) {
     block1imageright.classList.add('block1imageright');
   }
   // Block 1 image - right image-text
-  const block1imagerighttext =
-    block.children[1].children[1].children[0].children[1];
+  const block1imagerighttext = block.children[1].children[1].children[0].children[1];
   if (block1imagerighttext) {
     block1imagerighttext.classList.add('block1imagerighttext');
   }
