@@ -33,20 +33,20 @@ export default function decorate(block) {
     });
   }
   // Process image blocks
-  const flexItem_img = document.querySelectorAll(
-    '.flex-item .box-heading + div'
+  const flexItemImg = document.querySelectorAll(
+    '.flex-item .box-heading + div',
   );
-  if (flexItem_img.length > 0) {
-    flexItem_img.forEach((div) => {
+  if (flexItemImg.length > 0) {
+    flexItemImg.forEach((div) => {
       div.classList.add('img-block');
     });
   }
   // Process content blocks
-  const flexItem_div = document.querySelectorAll(
-    '.flex-item .box-heading + div + div'
+  const flexItemDiv = document.querySelectorAll(
+    '.flex-item .box-heading + div + div',
   );
-  if (flexItem_div.length > 0) {
-    flexItem_div.forEach((div) => {
+  if (flexItemDiv.length > 0) {
+    flexItemDiv.forEach((div) => {
       div.classList.add('content-block');
     });
   }
