@@ -71,7 +71,7 @@ body h6 {
   margin-top: 0;
 }
 
-@media screen and (max-width: 480px) {
+@media screen and (width <= 768px) {
   .d-flex-wrapper {
     flex-wrap: wrap;
   }
