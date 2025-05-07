@@ -1,0 +1,130 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: Segoe, "Segoe UI", "DejaVu Sans", "Trebuchet MS", Verdana, sans-serif;
+}
+body h1,
+body h2,
+body h3,
+body h4,
+body h5,
+body h6 {
+  font-family: Segoe, "Segoe UI", "DejaVu Sans", "Trebuchet MS", Verdana, sans-serif;
+}
+
+.section.essential-links-v2-container {
+  display: flex;
+  max-width: 1170px;
+  margin: 0 auto;
+  gap: 1%;
+}
+.section.essential-links-v2-container .essential-links-v2-wrapper {
+  flex-basis: 24%;
+  background-color: #eaeaea;
+  padding: 20px 15px;
+  margin: 0;
+}
+.section.essential-links-v2-container .essential-links-v2-wrapper .essential-heading h2 {
+  color: #333;
+  font-size: 16px;
+  padding-bottom: 12px;
+  margin-top: 0;
+  position: relative;
+  text-align: center;
+}
+.section.essential-links-v2-container .essential-links-v2-wrapper .essential-heading h2::after {
+  position: absolute;
+  content: "";
+  width: 70px;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: 0 auto;
+  border-bottom: 2px solid #0072bc;
+}
+.section.essential-links-v2-container .essential-links-v2-wrapper .essential_img_content_container {
+  display: flex;
+  gap: 13%;
+  max-width: 96%;
+  padding-top: 2%;
+}
+.section.essential-links-v2-container .essential-links-v2-wrapper .essential_img_content_container .essential-img {
+  padding-top: 4%;
+}
+.section.essential-links-v2-container .essential-links-v2-wrapper .essential_img_content_container .essential-img img {
+  max-width: 75px;
+}
+.section.essential-links-v2-container .essential-links-v2-wrapper .essential_img_content_container .essential-content ul li {
+  font-size: 14px;
+  line-height: 25px;
+}
+.section.essential-links-v2-container .essential-links-v2-wrapper .essential_img_content_container .essential-content ul li a {
+  color: #333;
+}
+.section.essential-links-v2-container .essential-links-v2-wrapper .essential_img_content_container .essential-content ul li a:hover {
+  text-decoration: none;
+  color: #0072bc;
+}
+.section.essential-links-v2-container .essential-links-v2-wrapper .essential_img_content_container .essential-content p {
+  font-size: 14px;
+  margin-top: 0;
+}
+.section.essential-links-v2-container .essential-links-v2-wrapper .essential_img_content_container .essential-content p a {
+  color: #333;
+}
+.section.essential-links-v2-container .essential-links-v2-wrapper .essential_img_content_container .essential-content p a:hover {
+  text-decoration: none;
+  color: #0072bc;
+}
+.section.essential-links-v2-container .essential-links-v2-wrapper:last-child .essential_img_content_container {
+  gap: 8%;
+}
+
+@media screen and (width <= 1024px) {
+  .section.essential-links-v2-container {
+    max-width: 98%;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+  .section.essential-links-v2-container .essential-links-v2-wrapper {
+    flex-basis: 49%;
+  }
+  .section.essential-links-v2-container .essential-links-v2-wrapper .essential-links-v2 {
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 15px;
+  }
+  .section.essential-links-v2-container .essential-links-v2-wrapper .essential-links-v2 .essential-heading h2 {
+    padding-bottom: 0;
+  }
+  .section.essential-links-v2-container .essential-links-v2-wrapper .essential-links-v2 .essential-heading h2::after {
+    display: none;
+  }
+  .section.essential-links-v2-container .essential-links-v2-wrapper .essential-links-v2 .essential_img_content_container {
+    align-items: center;
+    min-height: unset;
+  }
+  .section.essential-links-v2-container .essential-links-v2-wrapper .essential-links-v2 .essential_img_content_container .essential-img img {
+    max-height: 40px;
+  }
+  .section.essential-links-v2-container .essential-links-v2-wrapper .essential-links-v2 .essential_img_content_container .essential-content {
+    display: none;
+  }
+}
+@media screen and (width <= 480px) {
+  .section.essential-links-v2-container {
+    max-width: 75%;
+  }
+  .section.essential-links-v2-container .essential-links-v2-wrapper {
+    flex-basis: 100%;
+  }
+  .section.essential-links-v2-container .essential-links-v2-wrapper .essential-links-v2 .essential-heading h2 {
+    font-size: 14px;
+  }
+}/*# sourceMappingURL=essential-links-v2.css.map */
