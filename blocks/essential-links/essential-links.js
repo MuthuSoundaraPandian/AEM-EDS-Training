@@ -20,9 +20,9 @@ export default function decorate(block) {
   // Process content distribution
   flexWrapChildren.forEach((child, index) => {
     const flexItemIndex = Math.floor(index / 2);
-    flexItems[flexItemIndex]
-      ? flexItems[flexItemIndex].appendChild(child)
-      : null;
+    if(flexItems[flexItemIndex]){
+      flexItems[flexItemIndex].appendChild(child)
+    }
   });
   flexWrapSibling.remove();
   // Process headings
