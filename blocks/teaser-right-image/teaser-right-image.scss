@@ -1,0 +1,103 @@
+.teaser-right-image-container{
+    margin: 0 auto !important;
+    width: 1200px;
+    position: relative;
+    
+    @media screen and (max-width:767px){
+        width: auto;
+    }
+    .teaser-right-image-wrapper{
+        position: relative;
+        &::before{
+            background: #fff;
+        content: "";
+        height: 24px;
+        position: absolute;
+        top: 0;
+        width: 100%;
+        z-index: 1;
+        }
+        @media screen and (max-width:767px){
+            padding: 0 4%;
+            margin-bottom: 20%;
+        }
+    .teaser-right-image{
+        color:white;
+        background-color: #cc3e44;
+        display: flex;
+        flex-direction: row-reverse;
+        gap: 20px;
+        @media screen and (max-width:767px){
+            display: inherit;
+            padding: 0px 5%;
+            // position:inherit;
+
+        }
+            &__overlapimage{
+                width: 50%;
+                position: relative;
+                left:20px;
+                bottom: 20px;
+                @media screen and (max-width:767px){
+                    width: 100%;
+        
+                }
+            }
+            img{
+                position: relative;
+                // top: -19px;
+                // left: 20px;
+                z-index: 10;
+                @media screen and (max-width:767px){
+                    width: 100%;
+                    left: 0;
+                    top: -45px;
+        
+                }
+            }
+            &__content{
+                width: 34%;
+                padding: 11% 5%;
+                @media screen and (max-width:767px){
+                    width: 100%;
+                    margin-top: -16%;
+                }
+            }
+            &__heading{
+                line-height: 40px;
+                margin: 0;
+                font-family: sans-serif;
+                @media screen and (max-width:767px){
+                    font-size: 31px;
+                    line-height: 40px;
+        
+                }
+            }
+            &__sub-heading{
+                font-weight: bold;
+                font-family: sans-serif;
+                line-height: 45px;
+                font-size: 20px;
+                @media screen and (max-width:767px){
+                    font-size:20px;
+        
+                }
+            }
+            &__button{
+                display: inline-block;
+                padding: 5px 20px;
+                background: #eeedeb;
+                border: 1px solid #eeedeb;
+                border-radius: 5px;
+                color: #cc3e44;
+                font-weight: bold;
+                margin-top: 30px;
+                font-family: sans-serif;
+            }
+            &__learnmore-btn{
+                text-decoration: none;
+                color: #cc3e44;
+            }
+    }
+    }
+}

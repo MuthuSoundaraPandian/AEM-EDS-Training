@@ -1,73 +1,15 @@
-* {
-  box-sizing: border-box;
-}
-
-body {
-  font-family: Segoe, "Segoe UI", "DejaVu Sans", "Trebuchet MS", Verdana, sans-serif !important;
-}
-body h1,
-body h2,
-body h3,
-body h4,
-body h5,
-body h6 {
-  font-family: Segoe, "Segoe UI", "DejaVu Sans", "Trebuchet MS", Verdana, sans-serif !important;
-}
-
 .essential-links .d-flex-wrapper {
   display: flex;
+  height: 128px;
+}
+.essential-links .d-flex-wrapper .imgbox {
+  height: 100px;
+}
+.essential-links .d-flex-wrapper .grey-bg {
+  background: #eaeaea;
   align-items: center;
-  justify-content: space-between;
-}
-.essential-links .d-flex-wrapper .flex-item {
-  flex-basis: 24%;
-  background-color: #eaeaea;
-  padding: 20px 2px;
-  height: 171px;
-}
-.essential-links .d-flex-wrapper .flex-item table {
-  border-spacing: 0px;
-}
-.essential-links .d-flex-wrapper .flex-item table tr td img {
-  max-width: 75px;
-}
-.essential-links .d-flex-wrapper .flex-item table tr:first-child {
-  text-align: center;
-}
-.essential-links .d-flex-wrapper .flex-item table tr:first-child td {
-  font-size: 16px;
-}
-.essential-links .d-flex-wrapper .flex-item table tr:first-child h2 {
-  color: #333;
-  font-size: 16px;
-  padding-bottom: 12px;
-  margin-top: 0;
-  position: relative;
-}
-.essential-links .d-flex-wrapper .flex-item table tr:first-child h2::after {
-  position: absolute;
-  content: "";
-  width: 70px;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  margin: 0 auto;
-  border-bottom: 2px solid #0072bc;
-}
-.essential-links .d-flex-wrapper .flex-item table tr:last-child td {
+  justify-content: center;
+  padding: 15px;
+  display: flex;
   font-size: 14px;
-  padding: 0 6px;
-}
-.essential-links .d-flex-wrapper .flex-item table tr:last-child td ul li {
-  font-size: 14px;
-}
-.essential-links .d-flex-wrapper .flex-item table tr:last-child td ul li a {
-  color: #333;
-}
-.essential-links .d-flex-wrapper .flex-item table tr:last-child td ul li a:hover {
-  text-decoration: none;
-  color: #0072BC !important;
-}
-.essential-links .d-flex-wrapper .flex-item table tr:last-child td ul li a:visited {
-  color: #333;
 }/*# sourceMappingURL=essential-links.css.map */

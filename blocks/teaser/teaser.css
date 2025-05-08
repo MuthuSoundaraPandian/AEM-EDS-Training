@@ -1,0 +1,91 @@
+.teaser-container {
+  color: white;
+  padding: 70px;
+  background: navy;
+}
+.teaser-container .teaser {
+  display: flex;
+  gap: 10px;
+}
+@media screen and (max-width: 767px) {
+  .teaser-container .teaser {
+    display: inherit;
+  }
+}
+.teaser-container .teaser .teaser-image {
+  width: 50%;
+}
+@media screen and (max-width: 1200px) {
+  .teaser-container .teaser .teaser-image {
+    width: 100%;
+    margin-right: 30px;
+  }
+}
+.teaser-container .teaser .teaser-image img {
+  width: 300px;
+  height: 300px;
+}
+.teaser-container .teaser .teaser-content .teaser-heading {
+  margin-bottom: 15px;
+}
+.teaser-container .teaser .teaser-content .teaser-heading p {
+  font-size: 53px;
+  line-height: 60px;
+  margin: 0;
+  margin-top: 20px;
+}
+@media screen and (max-width: 1200px) {
+  .teaser-container .teaser .teaser-content .teaser-heading p {
+    font-size: 14px;
+    margin-top: 10px;
+  }
+}
+.teaser-container .teaser .teaser-content .teaser-desc {
+  margin-bottom: 10px;
+}
+@media screen and (max-width: 1200px) {
+  .teaser-container .teaser .teaser-content .teaser-desc {
+    margin-bottom: 10px;
+  }
+}
+.teaser-container .teaser .teaser-content .teaser-desc p {
+  font-size: 18px;
+  margin: 0;
+}
+@media screen and (max-width: 1200px) {
+  .teaser-container .teaser .teaser-content .teaser-desc p {
+    font-size: 16px;
+  }
+}
+@media screen and (max-width: 1200px) {
+  .teaser-container .teaser .teaser-content .button-container {
+    margin-top: 10px;
+  }
+}
+.teaser-container .teaser .teaser-content .button-container :hover {
+  background-color: orange;
+  border: 1px solid orange;
+}
+.teaser-container .teaser .teaser-content .button-container p {
+  border: 1px solid #fff;
+  padding: 15px;
+  display: inline-block;
+  background-color: #fff;
+}
+@media screen and (max-width: 1200px) {
+  .teaser-container .teaser .teaser-content .button-container p {
+    padding: 10px;
+  }
+}
+.teaser-container .teaser .teaser-content .button-container p a {
+  color: #000;
+  letter-spacing: 1px;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-weight: bold;
+}
+@media screen and (max-width: 1200px) {
+  .teaser-container .teaser .teaser-content .button-container p a {
+    font-size: 10px;
+  }
+}/*# sourceMappingURL=teaser.css.map */
