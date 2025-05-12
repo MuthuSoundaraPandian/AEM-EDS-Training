@@ -1,0 +1,91 @@
+.fresenius-card-wrapper{
+    &__item{
+        display: flex;
+        @media only screen and (min-width: 300px) and (max-width: 900px){
+            flex-direction: column;
+            text-align: center;
+            margin: auto;
+            width: 100%;
+        }
+        &__container{
+            margin-bottom: 30px;
+            display: flex;
+            flex-direction: column;
+            &__title{
+                order: 2;
+                color: #0033a0;
+                font-size: 18px;
+                line-height: 28px;
+                font-weight: 700;
+                font-family: NotoSans, sans-serif;
+                margin: 28px 0 0 0;
+                padding: 0px 34px 0 30px;
+                @media only screen and (min-width: 300px) and (max-width: 900px){
+                    margin-top: 15px;
+                    padding: 0 25px;
+                }
+            }
+            &__description{
+                order: 3;
+                font-size: 19px;
+                line-height: 25px;
+                font-weight: 400;
+                font-family: NotoSans, sans-serif;
+                padding: 0px 34px 0 30px;
+                min-height: 75px;
+                @media only screen and (min-width: 300px) and (max-width: 900px){
+                    font-size: 15px;
+                    line-height: 20px;
+                }
+            }
+            &__button{
+                order: 4;
+                text-decoration: none;
+                padding: 0px 34px 0 30px;
+                margin-bottom: 20px;
+                font-weight: 500;
+                a{
+                    color: #0033a0;
+                }
+                @media only screen and (min-width: 300px) and (max-width: 900px){
+                    margin: 0 0 20px 0;
+                    padding: 0 28px;
+                }
+            }
+            &__img{
+                width: 85%;
+                border-radius: 5px;
+                margin: 0;
+                height: auto;
+                cursor: pointer;
+                line-height: 0;
+                img{
+                    border-radius: 4px;
+                }
+                @media only screen and (min-width: 300px) and (max-width: 900px){
+                    width: 100%;
+                }
+            }
+            &__contents{
+                background: #071b45;
+                width: 85%;
+                @media only screen and (min-width: 300px) and (max-width: 900px){
+                    width: 100%;
+                }
+                h1{
+                    color: #fff;
+                }
+                p{
+                    color: #fff;
+                }
+                a{
+                    color: #fff;
+                    padding: 10px 0; 
+                }
+            }
+            &:hover .fresenius-card-wrapper__item__container__img {
+                box-shadow: 0 0 10px #000;
+            }
+        }
+    }
+}
