@@ -126,7 +126,7 @@ main > .section > div.fresenius-carousel-v2-wrapper {
   height: 10px;
   border-radius: 50%;
   border: none;
-  background: rgba(255, 255, 255, 0.5);
+  background: rgba(255, 255, 255, 0.5019607843);
   cursor: pointer;
   padding: 0;
 }
