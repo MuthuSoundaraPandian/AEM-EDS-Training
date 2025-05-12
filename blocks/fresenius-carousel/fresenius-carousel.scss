@@ -39,7 +39,7 @@ main > .section > div {
         }
       }
     }
-    @media screen and (width <= 1024px) {
+    @media screen and (width <= 1023px) {
       flex-basis: 100%;
       background: #eeedeb;
       padding: 5% 7% 7% 3%;
@@ -135,17 +135,17 @@ main > .section > div {
         }
       }
     }
-    @media screen and (width <= 1024px) {
+    @media screen and (width <= 1023px) {
       flex-basis: 90%;
       margin: 0 auto;
     }
   }
-  @media screen and (width <= 1024px) {
+  @media screen and (width <= 1023px) {
     flex-wrap: wrap;
   }
 }
 
-@media screen and (width <= 1024px) {
+@media screen and (width <= 1023px) {
   .fresenius-carousel-container.fresenius-carousel {
     max-width: 90%;
     background-color: transparent;

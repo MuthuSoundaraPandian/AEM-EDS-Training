@@ -23,7 +23,7 @@ main > .section > div.fresenius-carousel-v2-wrapper {
   max-width: 1680px;
   width: 90%;
 }
-@media screen and (width <= 1024px) {
+@media screen and (width <= 1023px) {
   main > .section > div.fresenius-carousel-v2-wrapper {
     max-width: 100%;
     width: 100%;
@@ -46,7 +46,7 @@ main > .section > div.fresenius-carousel-v2-wrapper {
 .fresenius-carousel__left-content__description {
   font-size: 27px;
 }
-@media screen and (width <= 1024px) {
+@media screen and (width <= 1023px) {
   .fresenius-carousel__left-content {
     flex-basis: 100%;
     background: #eeedeb;
@@ -85,7 +85,7 @@ main > .section > div.fresenius-carousel-v2-wrapper {
   color: #fff;
   font-size: 18px;
 }
-@media screen and (width <= 1024px) {
+@media screen and (width <= 1023px) {
   .fresenius-carousel__right-content__slider-wrapper {
     flex-basis: 90%;
     margin: 0 auto;
@@ -136,7 +136,7 @@ main > .section > div.fresenius-carousel-v2-wrapper {
 .fresenius-carousel__right-content__dots-container__dot:hover {
   background: #999;
 }
-@media screen and (width <= 1024px) {
+@media screen and (width <= 1023px) {
   .fresenius-carousel__right-content {
     flex-basis: 90%;
     padding: 0% 0% 2% 0%;
@@ -145,7 +145,7 @@ main > .section > div.fresenius-carousel-v2-wrapper {
     margin: auto;
   }
 }
-@media screen and (width <= 1024px) {
+@media screen and (width <= 1023px) {
   .fresenius-carousel {
     flex-wrap: wrap;
     background: transparent;
