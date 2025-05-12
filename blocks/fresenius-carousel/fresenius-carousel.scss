@@ -39,7 +39,7 @@ main > .section > div {
         }
       }
     }
-    @media screen and (max-width: 1024px) {
+    @media screen and (width <= 1024px) {
       flex-basis: 100%;
       background: #eeedeb;
       padding: 5% 7% 7% 3%;
@@ -124,10 +124,9 @@ main > .section > div {
         height: 10px;
         border-radius: 50%;
         border: none;
-        background: rgba(255, 255, 255, 0.5);
+        background: rgb(255 255 255 / 0.5);
         cursor: pointer;
         padding: 0;
-        transition: background 0.3s ease;
         &.active {
           background: #fff;
         }
@@ -136,17 +135,17 @@ main > .section > div {
         }
       }
     }
-    @media screen and (max-width: 1024px) {
+    @media screen and (width <= 1024px) {
       flex-basis: 90%;
       margin: 0 auto;
     }
   }
-  @media screen and (max-width: 1024px) {
+  @media screen and (width <= 1024px) {
     flex-wrap: wrap;
   }
 }
 
-@media screen and (max-width: 1024px) {
+@media screen and (width <= 1024px) {
   .fresenius-carousel-container.fresenius-carousel {
     max-width: 90%;
     background-color: transparent;
