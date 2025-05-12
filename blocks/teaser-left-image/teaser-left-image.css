@@ -1,6 +1,6 @@
 .teaser-left-image-container {
   margin: 0 auto !important;
-  width: 1150px;
+  width: 1200px;
   font-family: sans-serif;
 }
 @media screen and (max-width: 767px) {
@@ -21,18 +21,21 @@
   color: white;
   background-color: #196e80;
   display: flex;
-  position: relative;
-  left: 20px;
   gap: 20px;
 }
 .teaser-left-image-container .teaser-left-image-wrapper .teaser-left-image::before {
   background: #fff;
   content: "";
-  height: 24px;
+  height: 20px;
   position: absolute;
   top: 0;
   width: 100%;
   z-index: 1;
+}
+@media screen and (max-width: 767px) {
+  .teaser-left-image-container .teaser-left-image-wrapper .teaser-left-image::before {
+    position: unset;
+  }
 }
 @media screen and (max-width: 767px) {
   .teaser-left-image-container .teaser-left-image-wrapper .teaser-left-image {
@@ -43,9 +46,6 @@
 }
 .teaser-left-image-container .teaser-left-image-wrapper .teaser-left-image__overlapimage {
   width: 50%;
-  position: relative;
-  left: -20px;
-  bottom: 20px;
 }
 @media screen and (max-width: 767px) {
   .teaser-left-image-container .teaser-left-image-wrapper .teaser-left-image__overlapimage {
@@ -55,6 +55,7 @@
 .teaser-left-image-container .teaser-left-image-wrapper .teaser-left-image img {
   z-index: 10;
   position: relative;
+  padding-bottom: 10px;
 }
 @media screen and (max-width: 767px) {
   .teaser-left-image-container .teaser-left-image-wrapper .teaser-left-image img {
@@ -88,6 +89,7 @@
 .teaser-left-image-container .teaser-left-image-wrapper .teaser-left-image__sub-heading {
   font-weight: bold;
   font-family: sans-serif;
+  margin-top: 20px;
 }
 @media screen and (max-width: 767px) {
   .teaser-left-image-container .teaser-left-image-wrapper .teaser-left-image__sub-heading {

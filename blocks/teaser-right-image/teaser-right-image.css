@@ -8,6 +8,21 @@
     width: auto;
   }
 }
+.teaser-right-image-container::after {
+  background: #fff;
+  content: "";
+  height: 100%;
+  left: 0;
+  position: absolute;
+  top: 0;
+  width: 50px;
+  z-index: 1;
+}
+@media screen and (max-width: 767px) {
+  .teaser-right-image-container::after {
+    position: unset;
+  }
+}
 .teaser-right-image-container .teaser-right-image-wrapper {
   position: relative;
 }
@@ -21,6 +36,11 @@
   z-index: 1;
 }
 @media screen and (max-width: 767px) {
+  .teaser-right-image-container .teaser-right-image-wrapper::before {
+    position: unset;
+  }
+}
+@media screen and (max-width: 767px) {
   .teaser-right-image-container .teaser-right-image-wrapper {
     padding: 0 4%;
     margin-bottom: 20%;
@@ -32,6 +52,24 @@
   display: flex;
   flex-direction: row-reverse;
   gap: 20px;
+  position: absolute;
+  left: 32px;
+  right: 30px;
+}
+.teaser-right-image-container .teaser-right-image-wrapper .teaser-right-image::after {
+  background: #fff;
+  content: "";
+  height: 100%;
+  left: unset;
+  position: absolute;
+  top: 0;
+  width: 20px;
+  z-index: 1;
+}
+@media screen and (max-width: 767px) {
+  .teaser-right-image-container .teaser-right-image-wrapper .teaser-right-image::after {
+    position: unset;
+  }
 }
 @media screen and (max-width: 767px) {
   .teaser-right-image-container .teaser-right-image-wrapper .teaser-right-image {
@@ -41,9 +79,6 @@
 }
 .teaser-right-image-container .teaser-right-image-wrapper .teaser-right-image__overlapimage {
   width: 50%;
-  position: relative;
-  left: 20px;
-  bottom: 20px;
 }
 @media screen and (max-width: 767px) {
   .teaser-right-image-container .teaser-right-image-wrapper .teaser-right-image__overlapimage {
@@ -53,6 +88,7 @@
 .teaser-right-image-container .teaser-right-image-wrapper .teaser-right-image img {
   position: relative;
   z-index: 10;
+  padding-bottom: 10px;
 }
 @media screen and (max-width: 767px) {
   .teaser-right-image-container .teaser-right-image-wrapper .teaser-right-image img {
