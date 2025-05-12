@@ -20,7 +20,8 @@ main > .section > div.fresenius-carousel-v2-wrapper {
   max-width: 1680px;
   width: 90%;
   @media screen and (max-width: 1024px) {
-    max-width: 90%;
+    max-width: 100%;
+    width: 100%;
     background-color: transparent;
   }
 }
@@ -60,6 +61,7 @@ main > .section > div.fresenius-carousel-v2-wrapper {
         display: flex;
       }
       &__img {
+        max-width: 100%;
       }
       &__content {
         text-align: center;
@@ -76,6 +78,7 @@ main > .section > div.fresenius-carousel-v2-wrapper {
       @media screen and (max-width: 1024px) {
         flex-basis: 90%;
         margin: 0 auto;
+        padding: 0%;
       }
     }
     &__prev-button,
@@ -125,7 +128,8 @@ main > .section > div.fresenius-carousel-v2-wrapper {
     }
     @media screen and (max-width: 1024px) {
       flex-basis: 90%;
-      padding: 5% 7% 7% 3%;
+      // padding: 5% 7% 7% 3%;
+      padding: 0% 0% 2% 0%;
       max-width: 90%;
       right: unset;
       margin: auto;

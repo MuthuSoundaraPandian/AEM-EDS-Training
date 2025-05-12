@@ -25,7 +25,8 @@ main > .section > div.fresenius-carousel-v2-wrapper {
 }
 @media screen and (max-width: 1024px) {
   main > .section > div.fresenius-carousel-v2-wrapper {
-    max-width: 90%;
+    max-width: 100%;
+    width: 100%;
     background-color: transparent;
   }
 }
@@ -70,6 +71,9 @@ main > .section > div.fresenius-carousel-v2-wrapper {
 .fresenius-carousel__right-content__slider-wrapper.active {
   display: flex;
 }
+.fresenius-carousel__right-content__slider-wrapper__img {
+  max-width: 100%;
+}
 .fresenius-carousel__right-content__slider-wrapper__content {
   text-align: center;
 }
@@ -85,6 +89,7 @@ main > .section > div.fresenius-carousel-v2-wrapper {
   .fresenius-carousel__right-content__slider-wrapper {
     flex-basis: 90%;
     margin: 0 auto;
+    padding: 0%;
   }
 }
 .fresenius-carousel__right-content__prev-button, .fresenius-carousel__right-content__next-button {
@@ -134,7 +139,7 @@ main > .section > div.fresenius-carousel-v2-wrapper {
 @media screen and (max-width: 1024px) {
   .fresenius-carousel__right-content {
     flex-basis: 90%;
-    padding: 5% 7% 7% 3%;
+    padding: 0% 0% 2% 0%;
     max-width: 90%;
     right: unset;
     margin: auto;
