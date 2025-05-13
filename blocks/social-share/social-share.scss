@@ -1,0 +1,43 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+  body {
+    font-family: NotoSans, sans-serif;
+    color: #071b45;
+  }
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-family: NotoSans, sans-serif;
+  }
+  .social-share{
+    display: flex;
+    flex-direction:column;
+    &__like-and-share-wrapper{
+        display: flex;
+        flex-basis: 50%;
+        &__like-container{
+            flex: 0.6;
+        }
+        &__share-container{
+            flex: 2;
+        }
+        img{
+            max-width: 50px;
+        }
+        
+    }
+    &__right{
+        display: flex;
+        flex-basis: 50%;
+       
+        img{
+            max-width: 50px;
+        }
+    }
+  }
