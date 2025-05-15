@@ -13,7 +13,7 @@ body {
   margin-left: 0;
   padding: 0 5px;
 }
-@media (max-width: 767px) {
+@media (width <= 767px) {
   .cards-text-container .cards-text-wrapper {
     padding: 0 3px;
   }
@@ -21,12 +21,17 @@ body {
     display: none;
   }
 }
+@media (width <= 767px) and (width <= 480px) {
+  .cards-text-container .cards-text-wrapper {
+    padding: 0 2px;
+  }
+}
 .cards-text-container .cards-text-wrapper .cards-text {
   border-radius: 3px;
   background-color: white;
   padding: 1px 15px 0 15px;
 }
-@media (max-width: 480px) {
+@media (width <= 480px) {
   .cards-text-container .cards-text-wrapper .cards-text {
     padding: 5px 5px 0 5px;
   }
@@ -35,17 +40,17 @@ body {
   font-size: 1.6vw;
   color: #4d4c4c;
 }
-@media (max-width: 900px) {
+@media (width <= 900px) {
   .cards-text-container .cards-text-wrapper .cards-text .cards-text__title h1 {
     font-size: 1.8vw;
   }
 }
-@media (max-width: 77px) {
+@media (width <= 767px) {
   .cards-text-container .cards-text-wrapper .cards-text .cards-text__title h1 {
     font-size: 2vw;
   }
 }
-@media (max-width: 480px) {
+@media (width <= 480px) {
   .cards-text-container .cards-text-wrapper .cards-text .cards-text__title h1 {
     font-size: 1.8vw;
   }
@@ -58,17 +63,17 @@ body {
   font-size: 13px;
   color: #0f1111;
 }
-@media (max-width: 1024px) {
+@media (width <= 1024px) {
   .cards-text-container .cards-text-wrapper .cards-text .cards-text__image p {
     font-size: 1.1vw;
   }
 }
-@media (max-width: 767px) {
+@media (width <= 767px) {
   .cards-text-container .cards-text-wrapper .cards-text .cards-text__image p {
     font-size: 1.4vw;
   }
 }
-@media (max-width: 480px) {
+@media (width <= 480px) {
   .cards-text-container .cards-text-wrapper .cards-text .cards-text__image p {
     font-size: 1.6vw;
   }
@@ -77,12 +82,12 @@ body {
   font-size: 1vw;
   padding: 15px 0;
 }
-@media (max-width: 1024px) {
+@media (width <= 1024px) {
   .cards-text-container .cards-text-wrapper .cards-text .button-container {
     font-size: 1.2vw;
   }
 }
-@media (max-width: 767px) {
+@media (width <= 767px) {
   .cards-text-container .cards-text-wrapper .cards-text .button-container {
     font-size: 1.5vw;
   }
