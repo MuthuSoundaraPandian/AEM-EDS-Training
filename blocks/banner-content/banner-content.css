@@ -30,7 +30,7 @@
   padding: 25px;
   width: 45%;
 }
-@media (max-width: 1024px) {
+@media (width <= 1024px) {
   .banner-content-container .banner-content-wrapper .banner-content .banner-content__content {
     top: -33px;
     width: 90%;
@@ -39,13 +39,13 @@
     position: relative;
   }
 }
-@media (max-width: 767px) {
+@media (width <= 767px) {
   .banner-content-container .banner-content-wrapper .banner-content .banner-content__content {
     padding: 1.5rem;
     width: 88%;
   }
 }
-@media (max-width: 480px) {
+@media (width <= 480px) {
   .banner-content-container .banner-content-wrapper .banner-content .banner-content__content {
     padding: 1rem;
     width: 85%;
@@ -59,12 +59,12 @@
   font-family: "Segoe UI", sans-serif;
   font-weight: bold;
 }
-@media (max-width: 767px) {
+@media (width <= 767px) {
   .banner-content-container .banner-content-wrapper .banner-content .banner-content__content .banner-content__paragraph {
     font-size: 4vw;
   }
 }
-@media (max-width: 480px) {
+@media (width <= 480px) {
   .banner-content-container .banner-content-wrapper .banner-content .banner-content__content .banner-content__paragraph {
     font-size: 5vw;
   }
@@ -78,12 +78,12 @@
   border-radius: 4px;
   font-weight: bold;
 }
-@media (max-width: 767px) {
+@media (width <= 767px) {
   .banner-content-container .banner-content-wrapper .banner-content .banner-content__content .banner-content__paragraph a {
     font-size: 2.2vw;
   }
 }
-@media (max-width: 480px) {
+@media (width <= 480px) {
   .banner-content-container .banner-content-wrapper .banner-content .banner-content__content .banner-content__paragraph a {
     font-size: 3vw;
     margin-top: 10px;
