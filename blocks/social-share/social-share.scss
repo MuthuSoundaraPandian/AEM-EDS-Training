@@ -23,19 +23,69 @@
         flex-basis: 50%;
         &__like-container{
             flex: 0.6;
+            &__heading{
+              font-size: 20px;
+              font-weight: bold;
+            }
+            &__img{
+              gap: 20px;
+              display: flex;
+            }
+            @media screen and (width <= 768px) {
+              flex-basis: 100%;
+            }
         }
         &__share-container{
             flex: 2;
+            &__social-share-buttons{
+              display: flex;
+              gap: 10px;
+              align-items: center;
+              picture{
+                cursor: pointer;
+              }
+            }
+            @media screen and (width <= 768px) {
+              flex-basis: 100%;
+            }
         }
         img{
-            max-width: 50px;
-        }
-        
+            max-width: 40px;
+        }  
+        @media screen and (width <= 768px) {
+              flex-wrap: wrap;
+        }      
     }
-    &__right{
+    &__msg-and-error-wrapper{
         display: flex;
         flex-basis: 50%;
-       
+         @media screen and (width <= 768px) {
+          flex-basis: 100%;
+         }
+        &__msg-and-error-container{
+          width: 100%;
+          &__like-sucess-msg{
+            font-size: 20px;
+            font-weight: bold;
+            display: none;
+            color: #0f5132;
+            background-color: #d1e7dd;
+            border-color: #badbcc;
+            padding: 20px 15px;
+            border-radius: 8px;
+          }
+          &__share-error-msg{
+            font-size: 20px;
+            font-weight: bold;
+            display: none;
+          }
+          &__dislike-comments{
+            display: none;
+          }
+          &__submit{
+            margin: 0 15px;
+          }
+        }       
         img{
             max-width: 50px;
         }
