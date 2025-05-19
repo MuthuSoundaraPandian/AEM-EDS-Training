@@ -13,8 +13,8 @@ export default function decorate(block) {
   const shareErrorMsg = block.children[1].children[0].children[1];
   const disLikeComments = block.children[1].children[0].children[2];
   const submitButton = document.createElement('button');
-  const msgContainer = document.createElement('textarea');
-  msgContainer.classList.add('social-share__msg-and-error-wrapper__msg-and-error-container__msg');
+  const textArea = document.createElement('textarea');
+  textArea.classList.add('social-share__msg-and-error-wrapper__msg-and-error-container__msg');
   submitButton.classList.add('social-share__msg-and-error-wrapper__msg-and-error-container__submit');
   submitButton.textContent = 'Submit';
   const SocialSharebuttons = block.children[0].children[1].children[1];
@@ -63,8 +63,9 @@ export default function decorate(block) {
     likeImgButton.style.cssText = 'opacity: 0.5; pointer-events: none;';
     dislikeImgButton.style.cssText = 'opacity: 0.5; pointer-events: none;';
     disLikeComments.style.display = 'flex';
-    msgAndErrorContainer.append(msgContainer);
+    msgAndErrorContainer.append(textArea);
     msgAndErrorContainer.append(submitButton);
+    submitButton.style.cssText = 'opacity: 0.5; pointer-events: none;';
   });
   likeImgButton.addEventListener('click', () => {
     likeImgButton.classList.add('active');
@@ -73,16 +74,16 @@ export default function decorate(block) {
     dislikeImgButton.style.cssText = 'opacity: 0.5; pointer-events: none;';
     likeSucessMsg.style.display = 'flex';
   });
+  textArea.addEventListener('keyup', () => {
+    submitButton.style.cssText = 'opacity: 1; pointer-events: all;';
+  });
   submitButton.addEventListener('click', () => {
-    if (msgContainer.value !== '') {
+    if (textArea.value !== '') {
       disLikeComments.style.display = 'none';
-      msgContainer.style.display = 'none';
+      textArea.style.display = 'none';
       submitButton.style.display = 'none';
       shareErrorMsg.style.display = 'none';
       likeSucessMsg.style.display = 'flex';
-    } else {
-      // shareErrorMsg.style.display = 'flex';
-      alert('Please enter a message');
     }
   });
   SocialSharebuttons.addEventListener('click', (element) => {

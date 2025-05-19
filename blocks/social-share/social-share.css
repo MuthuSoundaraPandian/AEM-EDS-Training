@@ -37,6 +37,9 @@ h6 {
   gap: 20px;
   display: flex;
 }
+.social-share__like-and-share-wrapper__like-container__img picture {
+  cursor: pointer;
+}
 @media screen and (width <= 768px) {
   .social-share__like-and-share-wrapper__like-container {
     flex-basis: 100%;
