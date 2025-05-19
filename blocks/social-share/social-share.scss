@@ -30,6 +30,9 @@
             &__img{
               gap: 20px;
               display: flex;
+              picture{
+                cursor: pointer;
+              }
             }
             @media screen and (width <= 768px) {
               flex-basis: 100%;
