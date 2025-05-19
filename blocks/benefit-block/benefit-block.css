@@ -1,0 +1,52 @@
+.benefit-block {
+  display: flex;
+  font-family: NotoSans, sans-serif;
+}
+.benefit-block__leftside-item {
+  width: 60%;
+  background: rgba(128, 128, 128, 0.1411764706);
+  padding: 60px 25px 96px 20px;
+  justify-content: center;
+  height: 79%;
+}
+.benefit-block__leftside-item__contents__title {
+  font-size: 28px;
+  line-height: 38px;
+  padding: 0 20px;
+  margin: 0;
+}
+.benefit-block__leftside-item__contents__description {
+  font-size: 12px;
+  padding: 20px;
+  margin: 0;
+}
+.benefit-block__leftside-item__contents__button {
+  font-size: 15px;
+  padding: 0 20px;
+}
+.benefit-block__leftside-item__contents__button a {
+  text-decoration: none;
+  color: #297cc0;
+}
+.benefit-block__leftside-item__contents__icon img {
+  width: 4%;
+}
+.benefit-block__rightside-item__container__items {
+  display: flex;
+}
+.benefit-block__rightside-item__container__items__contents {
+  padding: 0 15px;
+}
+.benefit-block__rightside-item__container__items__contents__img {
+  width: 15%;
+}
+.benefit-block__rightside-item__container__items__contents__title {
+  font-size: 20px;
+}
+.benefit-block__rightside-item__container__items__contents__title a {
+  color: #297cc0;
+}
+.benefit-block__rightside-item__container__items__contents__description {
+  font-size: 14px;
+  margin-bottom: 20px;
+}/*# sourceMappingURL=benefit-block.css.map */
