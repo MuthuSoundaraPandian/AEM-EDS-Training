@@ -34,7 +34,7 @@
                 cursor: pointer;
               }
             }
-            @media screen and (width <= 768px) {
+            @media screen and (width <= 767px) {
               flex-basis: 100%;
             }
         }
@@ -48,21 +48,21 @@
                 cursor: pointer;
               }
             }
-            @media screen and (width <= 768px) {
+            @media screen and (width <= 767px) {
               flex-basis: 100%;
             }
         }
         img{
             max-width: 40px;
         }  
-        @media screen and (width <= 768px) {
+        @media screen and (width <= 767px) {
               flex-wrap: wrap;
         }      
     }
     &__msg-and-error-wrapper{
         display: flex;
         flex-basis: 50%;
-         @media screen and (width <= 768px) {
+         @media screen and (width <= 767px) {
           flex-basis: 100%;
          }
         &__msg-and-error-container{
