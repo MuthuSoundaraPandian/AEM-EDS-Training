@@ -1,0 +1,75 @@
+  body{
+    font-family: "Amazon Ember", Arial, sans-serif;
+  }
+.cards-text-container {
+  background-color: rgb(210, 212, 212);
+  border: 1px solid #e4e7e7;
+  display: flex;
+  padding: 18px 15px;
+  gap: 10px;
+  .cards-text-wrapper {
+    margin-left: 0;
+    padding: 0 5px;
+    @media (width <= 767px)
+    {
+       &:last-child {
+        display: none;
+      }
+      padding: 0 3px;
+       @media (width <= 480px){
+        padding: 0 2px;
+      }
+     
+    }
+    .cards-text {
+      border-radius: 3px;
+      background-color: white;
+      padding: 1px 15px 0 15px;
+      @media (width <= 480px) {
+        padding: 5px 5px 0 5px;
+      }
+      .cards-text__title {
+        h1 {
+          font-size: 1.6vw;
+          color: #4d4c4c;          
+          @media (width <= 900px) {
+            font-size: 1.8vw;
+          }
+           @media (width <= 767px) {
+            font-size: 2vw;
+          }
+          @media (width <= 480px) {
+            font-size: 1.8vw;
+          }
+        }
+      }
+      .cards-text__image {
+        display: flex;
+        gap: 10px;        
+        p {
+          font-size: 13px;
+          color: #0f1111;
+          @media (width <= 1024px) {
+            font-size: 1.1vw;
+          }
+          @media (width <= 767px) {
+            font-size: 1.4vw;
+          }
+          @media (width <= 480px) {
+            font-size: 1.6vw;
+          }
+        }
+      }
+      .button-container {
+        font-size: 1vw;
+        padding: 15px 0;
+        @media (width <= 1024px) {
+          font-size: 1.2vw;
+        }
+        @media (width <= 767px) {
+          font-size: 1.5vw;
+        }
+      }
+    }
+  }
+}
