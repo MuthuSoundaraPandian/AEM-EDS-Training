@@ -21,7 +21,7 @@ h6 {
 
 main > .section > div.fresenius-carousel-v2-wrapper {
   max-width: 1680px;
-  width: 90%;
+  width: 98%;
 }
 @media screen and (width <= 1023px) {
   main > .section > div.fresenius-carousel-v2-wrapper {
@@ -37,7 +37,7 @@ main > .section > div.fresenius-carousel-v2-wrapper {
 }
 .fresenius-carousel__left-content {
   flex-basis: 45%;
-  padding: 5% 7% 2% 3%;
+  padding: 15% 7% 2% 3%;
   align-self: flex-end;
 }
 .fresenius-carousel__left-content__heading {

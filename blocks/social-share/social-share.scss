@@ -1,0 +1,96 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+  body {
+    font-family: NotoSans, sans-serif;
+    color: #071b45;
+  }
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-family: NotoSans, sans-serif;
+  }
+  .social-share{
+    display: flex;
+    flex-direction:column;
+    &__like-and-share-wrapper{
+        display: flex;
+        flex-basis: 50%;
+        &__like-container{
+            flex: 0.6;
+            &__heading{
+              font-size: 20px;
+              font-weight: bold;
+            }
+            &__img{
+              gap: 20px;
+              display: flex;
+              picture{
+                cursor: pointer;
+              }
+            }
+            @media screen and (width <= 767px) {
+              flex-basis: 100%;
+            }
+        }
+        &__share-container{
+            flex: 2;
+            &__social-share-buttons{
+              display: flex;
+              gap: 10px;
+              align-items: center;
+              picture{
+                cursor: pointer;
+              }
+            }
+            @media screen and (width <= 767px) {
+              flex-basis: 100%;
+            }
+        }
+        img{
+            max-width: 40px;
+        }  
+        @media screen and (width <= 767px) {
+              flex-wrap: wrap;
+        }      
+    }
+    &__msg-and-error-wrapper{
+        display: flex;
+        flex-basis: 50%;
+         @media screen and (width <= 767px) {
+          flex-basis: 100%;
+         }
+        &__msg-and-error-container{
+          width: 100%;
+          &__like-sucess-msg{
+            font-size: 20px;
+            font-weight: bold;
+            display: none;
+            color: #0f5132;
+            background-color: #d1e7dd;
+            border-color: #badbcc;
+            padding: 20px 15px;
+            border-radius: 8px;
+          }
+          &__share-error-msg{
+            font-size: 20px;
+            font-weight: bold;
+            display: none;
+          }
+          &__dislike-comments{
+            display: none;
+          }
+          &__submit{
+            margin: 0 15px;
+          }
+        }       
+        img{
+            max-width: 50px;
+        }
+    }
+  }
