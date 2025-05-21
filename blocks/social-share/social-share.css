@@ -1,0 +1,107 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: NotoSans, sans-serif;
+  color: #071b45;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: NotoSans, sans-serif;
+}
+
+.social-share {
+  display: flex;
+  flex-direction: column;
+}
+.social-share__like-and-share-wrapper {
+  display: flex;
+  flex-basis: 50%;
+}
+.social-share__like-and-share-wrapper__like-container {
+  flex: 0.6;
+}
+.social-share__like-and-share-wrapper__like-container__heading {
+  font-size: 20px;
+  font-weight: bold;
+}
+.social-share__like-and-share-wrapper__like-container__img {
+  gap: 20px;
+  display: flex;
+}
+.social-share__like-and-share-wrapper__like-container__img picture {
+  cursor: pointer;
+}
+@media screen and (width <= 767px) {
+  .social-share__like-and-share-wrapper__like-container {
+    flex-basis: 100%;
+  }
+}
+.social-share__like-and-share-wrapper__share-container {
+  flex: 2;
+}
+.social-share__like-and-share-wrapper__share-container__social-share-buttons {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+.social-share__like-and-share-wrapper__share-container__social-share-buttons picture {
+  cursor: pointer;
+}
+@media screen and (width <= 767px) {
+  .social-share__like-and-share-wrapper__share-container {
+    flex-basis: 100%;
+  }
+}
+.social-share__like-and-share-wrapper img {
+  max-width: 40px;
+}
+@media screen and (width <= 767px) {
+  .social-share__like-and-share-wrapper {
+    flex-wrap: wrap;
+  }
+}
+.social-share__msg-and-error-wrapper {
+  display: flex;
+  flex-basis: 50%;
+}
+@media screen and (width <= 767px) {
+  .social-share__msg-and-error-wrapper {
+    flex-basis: 100%;
+  }
+}
+.social-share__msg-and-error-wrapper__msg-and-error-container {
+  width: 100%;
+}
+.social-share__msg-and-error-wrapper__msg-and-error-container__like-sucess-msg {
+  font-size: 20px;
+  font-weight: bold;
+  display: none;
+  color: #0f5132;
+  background-color: #d1e7dd;
+  border-color: #badbcc;
+  padding: 20px 15px;
+  border-radius: 8px;
+}
+.social-share__msg-and-error-wrapper__msg-and-error-container__share-error-msg {
+  font-size: 20px;
+  font-weight: bold;
+  display: none;
+}
+.social-share__msg-and-error-wrapper__msg-and-error-container__dislike-comments {
+  display: none;
+}
+.social-share__msg-and-error-wrapper__msg-and-error-container__submit {
+  margin: 0 15px;
+}
+.social-share__msg-and-error-wrapper img {
+  max-width: 50px;
+}/*# sourceMappingURL=social-share.css.map */

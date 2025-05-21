@@ -1,0 +1,153 @@
+@import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css");
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+body {
+  font-family: NotoSans, sans-serif;
+  color: #071b45;
+}
+main > .section > div {
+  max-width: unset;
+  margin: unset;
+  padding: unset;
+}
+
+.fresenius-carousel-container.fresenius-carousel {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  // max-width: 1200px;
+  max-width: 1680px;
+  margin: 0 auto !important;
+  background: #eeedeb;
+  width: 92%;
+  .fresenius-carousel-wrapper {
+    flex-basis: 45%;
+    padding: 5% 7% 2% 3%;
+    align-self: self-end;
+    .fresenius-carousel {
+      &__wrapper {
+        &__container {
+          &__heading {
+            font-size: 36px;
+          }
+          &__description {
+            font-size: 28px;
+          }
+        }
+      }
+    }
+    @media screen and (width <= 1023px) {
+      flex-basis: 100%;
+      background: #eeedeb;
+      padding: 5% 7% 7% 3%;
+    }
+  }
+  .fresenius-slider-wrapper {
+    flex-basis: 55%;
+    background: #071b45;
+    position: relative;
+    top: -30px;
+    right: -20px;
+    .fresenius-carousel-wrapper {
+      background: transparent;
+      padding: 10%;
+      display: none;
+      &.active {
+        display: block;
+      }
+      .fresenius-carousel {
+        &__wrapper {
+          background: transparent;
+          &__container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            &__heading {
+              color: #fff;
+              font-size: 48px;
+              margin: 0;
+            }
+            &__description {
+              font-size: 18px;
+              color: #fff;
+              margin: 0;
+            }
+          }
+        }
+      }
+    }
+    .prev-button {
+      background: #0033a0;
+      border-radius: 4px;
+      font-size: 18px;
+      width: 50px;
+      height: 50px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      top: 50%;
+      left: -20px;
+      transform: translateY(-50%);
+      position: absolute;
+      cursor: pointer;
+      z-index: 999;
+    }
+    .next-button {
+      background: #0033a0;
+      border-radius: 4px;
+      content: ">";
+      font-size: 18px;
+      width: 40px;
+      height: 50px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      top: 50%;
+      right: -20px;
+      transform: translateY(-50%);
+      position: absolute;
+      cursor: pointer;
+    }
+    .fresenius-dots-container {
+      display: flex;
+      justify-content: center;
+      gap: 18px;
+      padding: 20px 0 30px;
+      width: 100%;
+      order: 2; /* Ensures dots appear below slides */
+      .fresenius-dot {
+        width: 10px;
+        height: 10px;
+        border-radius: 50%;
+        border: none;
+        background: #838da2;
+        cursor: pointer;
+        padding: 0;
+        &.active {
+          background: #fff;
+        }
+        &:hover {
+          background: #999;
+        }
+      }
+    }
+    @media screen and (width <= 1023px) {
+      flex-basis: 90%;
+      margin: 0 auto;
+    }
+  }
+  @media screen and (width <= 1023px) {
+    flex-wrap: wrap;
+  }
+}
+
+@media screen and (width <= 1023px) {
+  .fresenius-carousel-container.fresenius-carousel {
+    max-width: 90%;
+    background-color: transparent;
+  }
+}

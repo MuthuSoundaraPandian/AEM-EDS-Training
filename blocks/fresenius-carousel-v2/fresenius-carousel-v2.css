@@ -1,0 +1,153 @@
+@import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css");
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: NotoSans, sans-serif;
+  color: #071b45;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: NotoSans, sans-serif;
+}
+
+main > .section > div.fresenius-carousel-v2-wrapper {
+  max-width: 1680px;
+  width: 98%;
+}
+@media screen and (width <= 1023px) {
+  main > .section > div.fresenius-carousel-v2-wrapper {
+    max-width: 100%;
+    width: 100%;
+    background-color: transparent;
+  }
+}
+
+.fresenius-carousel {
+  display: flex;
+  background: #eeedeb;
+}
+.fresenius-carousel__left-content {
+  flex-basis: 45%;
+  padding: 15% 7% 2% 3%;
+  align-self: flex-end;
+}
+.fresenius-carousel__left-content__heading {
+  font-size: 36px;
+}
+.fresenius-carousel__left-content__description {
+  font-size: 27px;
+}
+@media screen and (width <= 1023px) {
+  .fresenius-carousel__left-content {
+    flex-basis: 100%;
+    background: #eeedeb;
+    padding: 5% 7% 7% 3%;
+  }
+}
+.fresenius-carousel__right-content {
+  flex-basis: 55%;
+  background: #071b45;
+  position: relative;
+  top: -30px;
+  right: -20px;
+}
+.fresenius-carousel__right-content__slider-wrapper {
+  background: transparent;
+  padding: 10%;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+.fresenius-carousel__right-content__slider-wrapper.active {
+  display: flex;
+}
+.fresenius-carousel__right-content__slider-wrapper__img {
+  max-width: 100%;
+}
+.fresenius-carousel__right-content__slider-wrapper__content {
+  text-align: center;
+}
+.fresenius-carousel__right-content__slider-wrapper__content h2 {
+  color: #fff;
+  font-size: 44px;
+}
+.fresenius-carousel__right-content__slider-wrapper__content p {
+  color: #fff;
+  font-size: 18px;
+}
+@media screen and (width <= 1023px) {
+  .fresenius-carousel__right-content__slider-wrapper {
+    flex-basis: 90%;
+    margin: 0 auto;
+    padding: 0%;
+  }
+}
+.fresenius-carousel__right-content__prev-button, .fresenius-carousel__right-content__next-button {
+  background: #0033a0;
+  border-radius: 4px;
+  font-size: 18px;
+  width: 50px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  top: 50%;
+  transform: translateY(-50%);
+  position: absolute;
+  cursor: pointer;
+  z-index: 999;
+}
+.fresenius-carousel__right-content__next-button {
+  right: -20px;
+}
+.fresenius-carousel__right-content__prev-button {
+  left: -20px;
+}
+.fresenius-carousel__right-content__dots-container {
+  display: flex;
+  justify-content: center;
+  gap: 18px;
+  padding: 20px 0 30px;
+  width: 100%;
+  order: 2;
+}
+.fresenius-carousel__right-content__dots-container__dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  border: none;
+  background: #838da2;
+  cursor: pointer;
+  padding: 0;
+}
+.fresenius-carousel__right-content__dots-container__dot.active {
+  background: #fff;
+}
+.fresenius-carousel__right-content__dots-container__dot:hover {
+  background: #999;
+}
+@media screen and (width <= 1023px) {
+  .fresenius-carousel__right-content {
+    flex-basis: 90%;
+    padding: 0% 0% 2% 0%;
+    max-width: 90%;
+    right: unset;
+    margin: auto;
+  }
+}
+@media screen and (width <= 1023px) {
+  .fresenius-carousel {
+    flex-wrap: wrap;
+    background: transparent;
+  }
+}/*# sourceMappingURL=fresenius-carousel-v2.css.map */

@@ -1,5 +1,7 @@
 * {
   box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
 body {
@@ -14,37 +16,26 @@ body h6 {
   font-family: Segoe, "Segoe UI", "DejaVu Sans", "Trebuchet MS", Verdana, sans-serif !important;
 }
 
-.essential-links .d-flex-wrapper {
+.d-flex-wrapper {
   display: flex;
   align-items: center;
   justify-content: space-between;
 }
-.essential-links .d-flex-wrapper .flex-item {
+.d-flex-wrapper .flex-item {
   flex-basis: 24%;
   background-color: #eaeaea;
-  padding: 20px 2px;
+  padding: 20px 15px;
   height: 171px;
 }
-.essential-links .d-flex-wrapper .flex-item table {
-  border-spacing: 0px;
-}
-.essential-links .d-flex-wrapper .flex-item table tr td img {
-  max-width: 75px;
-}
-.essential-links .d-flex-wrapper .flex-item table tr:first-child {
-  text-align: center;
-}
-.essential-links .d-flex-wrapper .flex-item table tr:first-child td {
-  font-size: 16px;
-}
-.essential-links .d-flex-wrapper .flex-item table tr:first-child h2 {
+.d-flex-wrapper .flex-item h2 {
   color: #333;
   font-size: 16px;
   padding-bottom: 12px;
   margin-top: 0;
   position: relative;
+  text-align: center;
 }
-.essential-links .d-flex-wrapper .flex-item table tr:first-child h2::after {
+.d-flex-wrapper .flex-item h2::after {
   position: absolute;
   content: "";
   width: 70px;
@@ -54,20 +45,61 @@ body h6 {
   margin: 0 auto;
   border-bottom: 2px solid #0072bc;
 }
-.essential-links .d-flex-wrapper .flex-item table tr:last-child td {
-  font-size: 14px;
-  padding: 0 6px;
+.d-flex-wrapper .flex-item .flex-container {
+  display: flex;
+  justify-content: space-between;
+  max-width: 96%;
 }
-.essential-links .d-flex-wrapper .flex-item table tr:last-child td ul li {
+.d-flex-wrapper .flex-item .flex-container .img-block img {
+  max-width: 75px;
+}
+.d-flex-wrapper .flex-item .flex-container .content-block {
+  padding-left: 4%;
+}
+.d-flex-wrapper .flex-item .flex-container .content-block ul li {
   font-size: 14px;
 }
-.essential-links .d-flex-wrapper .flex-item table tr:last-child td ul li a {
+.d-flex-wrapper .flex-item .flex-container .content-block ul li a {
   color: #333;
 }
-.essential-links .d-flex-wrapper .flex-item table tr:last-child td ul li a:hover {
+.d-flex-wrapper .flex-item .flex-container .content-block ul li a:hover {
   text-decoration: none;
-  color: #0072BC !important;
+  color: #0072bc;
 }
-.essential-links .d-flex-wrapper .flex-item table tr:last-child td ul li a:visited {
-  color: #333;
+.d-flex-wrapper .flex-item .flex-container .content-block p {
+  font-size: 14px;
+  margin-top: 0;
+}
+
+@media screen and (width <= 768px) {
+  .d-flex-wrapper {
+    flex-wrap: wrap;
+  }
+  .d-flex-wrapper .flex-item {
+    flex-basis: 49%;
+    display: flex;
+    flex-direction: row-reverse;
+    padding: 5px;
+    height: 60px;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 6px;
+  }
+  .d-flex-wrapper .flex-item h2 {
+    font-size: 14px;
+    padding-bottom: 0;
+  }
+  .d-flex-wrapper .flex-item h2::after {
+    display: none;
+  }
+  .d-flex-wrapper .flex-item .img-block {
+    width: 30%;
+  }
+  .d-flex-wrapper .flex-item .img-block img {
+    max-width: 40px;
+    height: 50px;
+  }
+  .d-flex-wrapper .flex-item .content-block {
+    display: none;
+  }
 }/*# sourceMappingURL=essential-links.css.map */
