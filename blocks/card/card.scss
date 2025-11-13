@@ -1,0 +1,65 @@
+.card {
+  text-align: center;
+
+  .card_content {
+    .card_link a {
+      color: blue;
+      text-decoration: none;
+    }
+
+    .card_title {
+      font-size: 2rem;
+      font-weight: 700;
+      margin: 10px 0;
+    }
+
+    .card_desc {
+      color: gray;
+    }
+  }
+
+  .card_items {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 20px;
+    padding: 30px 0;
+    justify-content: center;
+
+    .card_common {
+        position: relative;
+        width: 270px;
+        border-radius: 12px;
+        overflow: hidden;
+        box-shadow: 0 0px 0px rgba(0, 0, 0, 0.1);
+        transition: all 0.3s ease;
+
+        picture,
+        img {
+            width: 100%;
+            height: auto;
+            display: block;
+            filter: brightness(70%);
+        }
+        h4,
+        h6 {
+            position: absolute;
+            left: 15px;
+            color: #fff;
+            z-index: 2;
+        }
+
+        h4 {
+            bottom: 45px;
+            font-size: 20px;
+            font-weight: 600;
+        }
+
+        h6 {
+            bottom: 15px;
+            font-size: 14px;
+            font-weight: 400;
+        }
+    }
+
+  }
+}

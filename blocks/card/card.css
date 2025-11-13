@@ -1,0 +1,54 @@
+.card {
+  text-align: center;
+}
+.card .card_content .card_link a {
+  color: blue;
+  text-decoration: none;
+}
+.card .card_content .card_title {
+  font-size: 2rem;
+  font-weight: 700;
+  margin: 10px 0;
+}
+.card .card_content .card_desc {
+  color: gray;
+}
+.card .card_items {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 20px;
+  padding: 30px 0;
+  justify-content: center;
+}
+.card .card_items .card_common {
+  position: relative;
+  width: 270px;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 0px 0px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+}
+.card .card_items .card_common picture,
+.card .card_items .card_common img {
+  width: 100%;
+  height: auto;
+  display: block;
+  filter: brightness(70%);
+}
+.card .card_items .card_common h4,
+.card .card_items .card_common h6 {
+  position: absolute;
+  left: 15px;
+  color: #fff;
+  z-index: 2;
+}
+.card .card_items .card_common h4 {
+  bottom: 45px;
+  font-size: 20px;
+  font-weight: 600;
+}
+.card .card_items .card_common h6 {
+  bottom: 15px;
+  font-size: 14px;
+  font-weight: 400;
+}/*# sourceMappingURL=card.css.map */
