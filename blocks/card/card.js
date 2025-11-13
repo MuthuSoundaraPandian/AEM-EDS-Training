@@ -1,4 +1,4 @@
-export default function decorate(block){
+export default function decorate(block) {
     console.log('sharma', block);
     const cardContent = block.children[0];
     cardContent.classList.add('card_content');
